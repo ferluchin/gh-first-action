@@ -1,5 +1,9 @@
 name: Deployment Project
-on: push
+on: [push, workflow_dispatch]
+# This workflow is triggered on push events and can also be manually triggered.
+# It consists of two jobs: test and deploy.
+# The test job runs first, and if it succeeds, the deploy job runs next.
+# The test job installs Node.js, installs dependencies, and runs tests.
 jobs: 
   test:
     runs-on: ubuntu-latest
